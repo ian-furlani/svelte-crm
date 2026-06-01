@@ -1,0 +1,44 @@
+@import 'tailwindcss';
+
+@layer utilities {
+  .col {
+    @apply odd:bg-theme-200 even:bg-theme-200/70 nth-1:rounded-bl-xl nth-last-1:rounded-br-xl;
+  }
+  .col-heading {
+    @apply text-center border-b border-b-theme-400 px-2 overflow-x-hidden text-ellipsis text-nowrap;
+  }
+  .col-entry {
+    @apply text-left border-b border-theme-400/50 px-2 overflow-x-hidden text-ellipsis text-nowrap
+    hover:bg-theme-300 hover:transition-transform hover:scale-105 duration-100 cursor-pointer;
+  }
+  
+  .no-scrollbar {
+    @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+  }
+}
+
+@utility input-element {
+  @apply bg-theme-300 px-2 py-1 border-theme-400 border outline-theme-400 hover:bg-theme-200 rounded-md;
+}
+
+button {
+  @apply input-element min-w-16 cursor-pointer;
+}
+
+input[type="text"] {
+  @apply input-element;
+}
+
+@theme {
+  --color-theme-50: oklch(0.965 0.006 84.49);
+  --color-theme-100: oklch(0.94 0.012 91.46);
+  --color-theme-200: oklch(0.87 0.02 90.53);
+  --color-theme-300: oklch(0.811 0.018 92.68);
+  --color-theme-400: oklch(0.748 0.017 91.56);
+  --color-theme-500: oklch(0.69 0.016 90.25);
+  --color-theme-600: oklch(0.63 0.015 93.03);
+  --color-theme-700: oklch(0.569 0.014 91.58);
+  --color-theme-800: oklch(0.517 0.013 95.27);
+  --color-theme-900: oklch(0.457 0.01 91.55);
+  --color-theme-950: oklch(0.424 0.01 91.57);
+}
