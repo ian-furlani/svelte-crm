@@ -75,7 +75,7 @@
     }
 
     async function openNewCustomerPrompt() {
-        const newCustomerPrompt = new MultiPromptWindow("Add new customer", [
+        const newCustomerPrompt = new MultiPromptWindow("Add New Customer", [
             {key: "firstName", message: "First Name"},
             {key: "lastName", message: "Last Name"},
             {key: "email", message: "E-Mail"},
@@ -117,10 +117,10 @@
   <div class="h-[80%] w-[80%] bg-theme-200 rounded-xl flex flex-col justify-start {windowManager.backgroundBlur ? "blur-xs" : "blur-none"}">
     <Table title="Customers" watchTables={["customers", "purchases"]} {columns} getData={async (page, limit, query) => await fetchJson(`/api/customers/list?${new URLSearchParams({page, limit, query}).toString()}`)} limit={20} onrowclick={customerTableRowClickHandler} onrowrightclick={customerTableRowRightClickHandler}/>
   </div>
-  <button onclick={openNewCustomerPrompt}>Add new customer</button>
+  <button onclick={openNewCustomerPrompt}>Add New Customer</button>
   <button onclick={openScanner}>Scan Code</button>
   <div class="text-base text-left">
-    <span><span class="font-bold">Add new purchase</span>: left-click on any customer cell<br></span>
+    <span><span class="font-bold">Add New Purchase</span>: left-click on any customer cell<br></span>
     <span><span class="font-bold">View customer history and data</span>: right click on any customer cell<br></span>
   </div>
   <!-- Recursively render windows, starting from the top-level (parentless) `windows` array. -->
